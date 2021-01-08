@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lorda\\Sandbox\\revature\\PizzaBox.Client\\PizzaBox.Client.csproj",
+      "projectUniqueName": "C:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\PizzaBox.Client.csproj",
       "projectName": "PizzaBox.Client",
-      "projectPath": "C:\\Users\\lorda\\Sandbox\\revature\\PizzaBox.Client\\PizzaBox.Client.csproj",
+      "projectPath": "C:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\PizzaBox.Client.csproj",
       "packagesPath": "C:\\Users\\lorda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lorda\\Sandbox\\revature\\PizzaBox.Client\\obj\\",
+      "outputPath": "C:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lorda\\AppData\\Roaming\\NuGet\\NuGet.Config",

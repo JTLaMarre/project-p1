@@ -9,6 +9,7 @@ using PizzaBox.Client.Models;
 
 namespace PizzaBox.Client.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,9 +19,15 @@ namespace PizzaBox.Client.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index() //HTTP verb?
         {
-            return View();
+            return View(); // nop view specified so it tried to find a view with same name of the action
+            // HTTP status code --
+            //  100s (network info),
+            //  200s (succesful responses)
+            //  300s(redirection responses due to availability)
+            //  400s (incorrect requests responses)
+            // 500s (incorrect route mapping responses)
         }
 
         public IActionResult Privacy()

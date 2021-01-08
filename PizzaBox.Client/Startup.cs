@@ -48,9 +48,11 @@ namespace PizzaBox.Client
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers(); // attribute routing
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"); //global routing
+                endpoints.MapControllerRoute("marketing","marketing{controller}/{action}"); // gloabl specified routing
             });
         }
     }
