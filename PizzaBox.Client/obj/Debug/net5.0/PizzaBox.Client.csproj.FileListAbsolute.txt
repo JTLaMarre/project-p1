@@ -38,3 +38,5 @@ C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\ref\
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\PizzaBox.Client.pdb
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\PizzaBox.Client.genruntimeconfig.cache
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\PizzaBox.Client.csproj.CopyComplete
+C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Home\Order.cshtml.g.cs
+C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Home\Store.cshtml.g.cs

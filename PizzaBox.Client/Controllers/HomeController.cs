@@ -30,7 +30,12 @@ namespace PizzaBox.Client.Controllers
             //  400s (incorrect requests responses)
             // 500s (incorrect route mapping responses)
         }
-
+        public IActionResult Order(){
+            return View();
+        }
+        public IActionResult Store(){
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
