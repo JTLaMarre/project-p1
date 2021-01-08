@@ -19,6 +19,7 @@ namespace PizzaBox.Client.Controllers
             _logger = logger;
         }
 
+        // IActionResult returns interfaces
         public IActionResult Index() //HTTP verb?
         {
             return View(); // nop view specified so it tried to find a view with same name of the action
