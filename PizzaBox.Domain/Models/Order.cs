@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Factories;
 
-namespace PizzaWorld.Domain.Models
+namespace PizzaBox.Domain.Models
 {
     public class Order : AEntity
     {

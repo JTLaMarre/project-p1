@@ -1,9 +1,39 @@
-@{
-  ViewData["Title"] = "Order";
+
+@*
+-HTML Helpers
+-TAG Helpers
+-CSRF = cross site request forgery
+ *@
+
+@* html way *@
+<form action="/order/post"method="POST">
+@Html.AntiForgeryToken()
+@foreach (var item in ViewBag.Order.Stores)
+{
+<input type="radio" name="store" id="@item">
+<label for="@item">@item</label>
+    }
+  <select>
+@foreach (var item in ViewBag.Order.Pizzas)
+{
+  <option value="@item">@item</option>    
 }
+  </select>
+</form>
 
+@* html helper way *@
+@* @using (@Html.BeginForm("post","order", null,FormMethod.Post))
+{
+  @Html.AntiForgeryToken() 
+  @Html.RadioButtonFor(m => m.Stores, Model.Store)
+  
+} *@
+@* tag helper way *@
+@* <form asp-action="post" asp-controller="order" method="POST">
 
-<div class="row justify-content-center">
+</form> *@
+
+@* <div class="row justify-content-center">
   <div class="col-sm"></div>
   <div class="col-sm">
     <h2 class=" bg-danger text-white">Lets Start a Pizza Order</h2>
@@ -38,7 +68,7 @@
           <div class="input-group-prepend">
             <div class="input-group-text">
               <label for="pepperoni">
-                <input type="checkbox">
+                <input type="checkbox" name="peppizzas" name="amountpep">
                 Pepperoni
               </label>
             </div>
@@ -49,33 +79,33 @@
           <div class="input-group-prepend">
             <div class="input-group-text">
               <label for="cheese">
-                <input type="checkbox">
+                <input type="checkbox"name="cheesepizzas">
                 Four Cheese
               </label>
             </div>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="amountcheese">
           </div>
         </div>
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text">
               <label for="meat">
-                <input type="checkbox">
+                <input type="checkbox" name="meatpizzas">
                 Meat Pizza
               </label>
             </div>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="amountmeat">
           </div>
         </div>
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text">
               <label for="veggie">
-                <input type="checkbox">
+                <input type="checkbox" name="vegpizzas">
                 Veggie Pizza
               </label>
             </div>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="amountveg">
           </div>
         </div>
         </div>
@@ -90,4 +120,4 @@
   </div>
   <div class="col-md"></div>
 
-</div>
+</div> *@
