@@ -13,12 +13,16 @@
 <input type="radio" name="store" id="@item">
 <label for="@item">@item</label>
     }
-  <select>
+  
 @foreach (var item in ViewBag.Order.Pizzas)
 {
-  <option value="@item">@item</option>    
+  <label for="@item">
+                <input type="checkbox"name="@item">
+                @item
+              </label>  
 }
-  </select>
+  
+  <button type="submit"class="btn btn-danger">Place Order</button>
 </form>
 
 @* html helper way *@

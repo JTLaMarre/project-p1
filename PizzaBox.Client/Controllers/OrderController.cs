@@ -34,11 +34,13 @@ namespace PizzaBox.Client.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Post(OrderViewModel order)
         {
-            // todo submit an order
+            
+            
             if (ModelState.IsValid)
-            {
+            {   
                 return View("OrderPass");
             }
             return View("OrderFail");
