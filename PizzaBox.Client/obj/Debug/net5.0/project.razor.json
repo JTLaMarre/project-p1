@@ -15613,8 +15613,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\Views\\Store\\StoreList.cshtml",
-      "TargetPath": "Views\\Store\\StoreList.cshtml",
+      "FilePath": "c:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\Views\\Store\\Store.cshtml",
+      "TargetPath": "Views\\Store\\Store.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15635,6 +15635,11 @@
     {
       "FilePath": "c:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\Views\\Pizza\\Pizza.cshtml",
+      "TargetPath": "Views\\Pizza\\Pizza.cshtml",
       "FileKind": "mvc"
     },
     {

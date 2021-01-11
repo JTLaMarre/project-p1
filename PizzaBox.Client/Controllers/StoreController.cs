@@ -9,7 +9,7 @@ using PizzaBox.Client.Models;
 
 namespace PizzaBox.Client.Controllers
 {
-
+[Route("[controller]")]
     public class StoreController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,14 +19,28 @@ namespace PizzaBox.Client.Controllers
             _logger = logger;
         }
 
-        // each controller needs a method for each crud action
-        public void Get()
+        // think about CRUD when building controllers 
+        [HttpGet]
+        public IActionResult Get()
         {
+            var stores = new StoreViewModel();
+            // three different ways to bind the data 
 
+            ViewBag.Stores = stores.Stores; // dynamic object 
+
+            // dictionary object    
+            // ViewData["Stores"]=stores.Stores; 
+
+
+            // for when response is a redirect
+            // TempData["Stores"]=stores.Stores; 
+
+            return View("Store");
         }
-        public void Get(string store)
+        [HttpGet("{store}")] //http:localhost5000/store/{store}
+        public IActionResult Get(string store)
         {
-
+            return View("Store",store); //returnin an action result
         }
         // Don't need these for Store since Out customer isn't doing these
         // public void Post()

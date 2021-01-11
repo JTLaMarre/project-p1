@@ -52,7 +52,7 @@ namespace PizzaBox.Client
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"); //global routing
-                endpoints.MapControllerRoute("marketing","marketing{controller}/{action}"); // gloabl specified routing
+                // endpoints.MapControllerRoute("marketing","marketing{controller}/{action}"); // gloabl specified routing
             });
         }
     }

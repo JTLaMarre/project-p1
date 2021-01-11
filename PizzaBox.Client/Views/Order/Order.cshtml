@@ -19,21 +19,21 @@
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text">
-            <label for="store1">
+            @foreach (var s in ViewBag.Stores)
+            {
+                <label for="store1">
               <input type="checkbox">
-              LaMarrinos
+              @s
             </label>
-            <br>
-            <label for="store2">
-              <input type="checkbox">
-              Meetzeronis
-            </label>
+            <br/>
+            }
+            
           </div>
         </div>
         <br>
         <div class="row justify-content-center">
 
-        <h3 class="bg-danger text-white"> Choose Pizzas</h3>
+        <h3 class="bg-danger text-white"> Choose Pizzas ALL Pizza 10$ each</h3>
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text">

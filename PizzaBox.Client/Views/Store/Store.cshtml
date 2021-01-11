@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Stores Page";
+}
+
+<ul>
+@foreach (var Store in ViewBag.Stores)
+{
+    <li>@Store</li>
+}
+</ul>

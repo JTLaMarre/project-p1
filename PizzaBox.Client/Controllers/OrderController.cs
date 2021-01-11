@@ -9,7 +9,7 @@ using PizzaBox.Client.Models;
 
 namespace PizzaBox.Client.Controllers
 {
-
+[Route("[controller]")]
     public class OrderController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,10 +20,14 @@ namespace PizzaBox.Client.Controllers
         }
 
         
-        
+        [HttpGet]
         public IActionResult Order(){
+            var stores = new StoreViewModel();
+             ViewBag.Stores = stores.Stores;
             return View();
         }
-      
+        public void Post(){
+            // todo submit an order
+        }
     }
 }
