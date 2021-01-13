@@ -30,11 +30,7 @@ namespace PizzaBox.Client.Models
 
         public OrderViewModel()
         {
-            Stores = new List<string>()
-            {
-                "LaMarrinos",
-                "Meetzeronis"
-            };
+           
             Pizzas = new List<string>()
             {
                 "Pepperoni",
