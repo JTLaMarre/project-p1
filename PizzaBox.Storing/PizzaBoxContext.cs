@@ -8,7 +8,7 @@ namespace PizzaBox.Storing
 {
 
 
-    public class PizzaWorldContext : DbContext
+    public class PizzaBoxContext : DbContext
     {
         // Properties are the model for the DB
         public virtual DbSet<Store> Stores { get; set; }
@@ -19,11 +19,8 @@ namespace PizzaBox.Storing
         public virtual DbSet<APizzaModel> Pizzas { get; set; }
 
         // connect our ORM "EF Core" to DB
-        protected override void OnConfiguring(DbContextOptionsBuilder builder)
-        {
-            builder.UseSqlServer("Server=tcp:jacobpizzaworlddb.database.windows.net,1433;Initial Catalog=PizzaWorldDB;Persist Security Info=False;User ID=bob;Password=pass123!");
-        }
-        
+        public PizzaBoxContext(DbContextOptions<PizzaBoxContext> options) : base(options) { }
+       
 
         // Tells SQL When building these tables do this 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -44,7 +41,10 @@ namespace PizzaBox.Storing
             builder.Entity<Store>().HasData( new List<Store>
                 {
                     new Store() {EntityId= 5, Name = "LaMarrinos"},
-                    new Store() {EntityId= 6, Name = "Meetzeronis"}
+                    new Store() {EntityId= 6, Name = "Meetzeronis"},
+                    new Store() {EntityId=7,Name= "Freddy's"},
+                    new Store() {EntityId=8,Name="Lubrano's"},
+                    new Store() {EntityId=9,Name="Big Italy"}
                 }
             );
             builder.Entity<User>().HasData( new List<User>

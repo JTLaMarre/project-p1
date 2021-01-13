@@ -4,26 +4,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PizzaBox.Client.Models;
+using PizzaBox.Storing;
 
 namespace PizzaBox.Client.Controllers
 {
 [Route("[controller]")]
     public class StoreController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public StoreController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        
+        private readonly PizzaBoxRepository _ctx;
 
         // think about CRUD when building controllers 
         [HttpGet]
         public IActionResult Get()
         {   
-            var s = new StoreViewModel();
+            var s = new StoreViewModel(){
+                Stores=_ctx.GetStores()
+            };
             return View("Store",s);
         }
         [HttpGet("{store}")] //http:localhost5000/store/{store}
