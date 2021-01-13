@@ -17,6 +17,10 @@ namespace PizzaBox.Storing
     {
       return _ctx.Stores.Select(s => s.Name).ToList();
     }
+    public List<string> GetUsers()
+    {
+      return _ctx.Users.Select(u => u.Name).ToList();
+    }
 
     // TODO: Refactor code to implement this type of abstraction
     // public IEnumerable<T> Get<T>() where T : AModel
