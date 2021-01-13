@@ -5,7 +5,8 @@
 <ul>
 @foreach (var user in Model.Users)
 {
-    <li>@user</li>
+    <li>@user <button class="btn btn-primary">select</button></li>
+    <br>
 }
 </ul>
 <form action="/user/post"method="POST">
