@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Users Page";
+}
+@model PizzaBox.Client.Models.UserViewModel
+<ul>
+@foreach (var user in Model.Users)
+{
+    <li>@user</li>
+}
+</ul>
+<form action="/user/post"method="POST">
+@Html.AntiForgeryToken()
+<input type="text" name="Name" id="Name">
+<button type="submit" class="btn btn-primary">add user</button>
+</form>

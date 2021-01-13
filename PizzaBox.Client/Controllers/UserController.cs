@@ -6,25 +6,31 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PizzaBox.Client.Models;
 using PizzaBox.Storing;
+using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Client.Controllers
 {
     [Route("[controller]")]
-    public class  StoreController : Controller{
-        
+    public class UserController : Controller
+    {
+
         private readonly PizzaBoxRepository _ctx;
 
-        public StoreController(PizzaBoxRepository context){
-            _ctx=context;
+        public UserController(PizzaBoxRepository context)
+        {
+            _ctx = context;
         }
-    [HttpGet]
+        [HttpGet]
         public IActionResult Get()
         {
-            var store = new StoreViewModel(){
-                 Stores = _ctx.GetStores()
+            var user = new UserViewModel()
+            {
+                Users = _ctx.GetUsers()
             };
-           
-            return View("Store",store);
+
+            return View("User", user);
         }
+        
     }
+
 }

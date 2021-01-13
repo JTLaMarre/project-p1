@@ -44,7 +44,7 @@ namespace PizzaBox.Client.Controllers
             {   
                 return View("OrderPass");
             }
-            return View("OrderFail");
+            return View("Home");
         }
     }
 }
