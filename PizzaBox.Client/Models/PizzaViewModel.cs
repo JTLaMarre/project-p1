@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace PizzaBox.CLient.Models
+namespace PizzaBox.Client.Models
 {
     public class PizzaViewModel
     {

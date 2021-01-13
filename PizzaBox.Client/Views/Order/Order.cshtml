@@ -6,15 +6,18 @@
  *@
 
 @* html way *@
+
+@model PizzaBox.Client.Models.OrderViewModel
+
 <form action="/order/post"method="POST">
 @Html.AntiForgeryToken()
-@foreach (var item in ViewBag.Order.Stores)
+@foreach (var item in Model.Stores)
 {
 <input type="radio" name="store" id="@item">
 <label for="@item">@item</label>
     }
   
-@foreach (var item in ViewBag.Order.Pizzas)
+@foreach (var item in Model.Pizzas)
 {
   <label for="@item">
                 <input type="checkbox"name="@item">

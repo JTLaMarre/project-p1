@@ -24,8 +24,8 @@ namespace PizzaBox.Client.Controllers
         public IActionResult Get()
         {
             var Order = new OrderViewModel();
-           ViewBag.Order = Order;
-            return View("Order");
+           
+            return View("Order",Order);
         }
         [HttpGet("{id}")]
         public IActionResult GetAction(string id)

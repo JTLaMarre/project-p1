@@ -22,20 +22,9 @@ namespace PizzaBox.Client.Controllers
         // think about CRUD when building controllers 
         [HttpGet]
         public IActionResult Get()
-        {
-            var stores = new StoreViewModel();
-            // three different ways to bind the data 
-
-            ViewBag.Stores = stores.Stores; // dynamic object 
-
-            // dictionary object    
-            // ViewData["Stores"]=stores.Stores; 
-
-
-            // for when response is a redirect
-            // TempData["Stores"]=stores.Stores; 
-
-            return View("Store");
+        {   
+            var s = new StoreViewModel();
+            return View("Store",s);
         }
         [HttpGet("{store}")] //http:localhost5000/store/{store}
         public IActionResult Get(string store)

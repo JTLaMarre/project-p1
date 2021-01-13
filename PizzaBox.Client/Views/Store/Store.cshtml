@@ -1,9 +1,9 @@
 @{
     ViewData["Title"] = "Stores Page";
 }
-
+@model PizzaBox.Client.Models.StoreViewModel
 <ul>
-@foreach (var Store in ViewBag.Stores)
+@foreach (var Store in Model.Stores)
 {
     <li>@Store</li>
 }
