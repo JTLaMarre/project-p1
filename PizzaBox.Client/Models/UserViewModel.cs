@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Client.Models
 {
@@ -8,6 +9,7 @@ namespace PizzaBox.Client.Models
         
         public List<string> Users {get;set;}
         
+        public IEnumerable<Order> Orders {get;set;}
 
     }
 }
