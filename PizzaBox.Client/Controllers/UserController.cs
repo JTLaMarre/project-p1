@@ -30,14 +30,30 @@ namespace PizzaBox.Client.Controllers
 
             return View("User", user);
         }
-        
-        public IActionResult Orders(User user){
 
-            var model = new UserViewModel();
-            model.Orders = _ctx.Orders();
-          
-            return View("UserOrders",model);
+        // public IActionResult Orders(User user)
+        // {
+
+        //     var model = new UserViewModel();
+        //     model.Orders = _ctx.Orders();
+
+        //     return View("UserOrders", model);
+
+        // }
+        
+        [HttpPost]
+        public IActionResult Post()
+        {
+            if(ModelState.IsValid){
+            var user = new User();
+
+            return View("User",user);
+            }
+
+            return View("home");
+
         }
     }
+
 
 }

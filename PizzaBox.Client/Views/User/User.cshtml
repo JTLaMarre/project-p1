@@ -7,15 +7,15 @@
 {
     <li>
         @user 
-        <form asp-controller="Home" asp-action="Index">
-        <button type="submit"  class="btn btn-primary"  name ="@user">select</button>
+        <form asp-controller="User" asp-action="select" method="get" >
+        <button type="submit"  class="btn btn-primary"  value ="@user">select</button>
         </form>
         </li>
     
     <br>
 }
 </ul>
-<form action="/user/post"method="POST">
+<form asp-controller="user" asp-action="post" method="POST">
 @Html.AntiForgeryToken()
 <input type="text" name="Name" id="Name">
 <button type="submit" class="btn btn-primary">add user</button>
