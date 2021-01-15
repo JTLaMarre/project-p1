@@ -1,0 +1,7 @@
+
+@model PizzaBox.Client.Models.OrderPizzasViewModel
+
+@foreach (var item in Model.Pizzas)
+{
+    <p>@item.Name id: @item.EntityId</p>
+}

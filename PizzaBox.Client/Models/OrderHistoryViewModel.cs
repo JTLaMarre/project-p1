@@ -4,10 +4,13 @@ using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Client.Models
 {
-    public class UserViewModel
+    public class OrderHistoryViewModel
     {
-        
-        public List<string> Users {get;set;}
+        public OrderHistoryViewModel(){
+            Orders = new List<Order>();
+
+        }
+        public string User {get;set;}
         
         public IEnumerable<Order> Orders {get;set;}
 

@@ -30,17 +30,23 @@ namespace PizzaBox.Client.Controllers
 
             return View("User", user);
         }
+        [HttpGet("{id}")]
+        public IActionResult Get(string id){
 
-        // public IActionResult Orders(User user)
-        // {
+            var userHistory = new OrderHistoryViewModel();
+            userHistory.User=id;
 
-        //     var model = new UserViewModel();
-        //     model.Orders = _ctx.Orders();
+            long userId = _ctx.GetUsersId(id);
 
-        //     return View("UserOrders", model);
+            userHistory.Orders = _ctx.getUserOrders(userId);
 
-        // }
+            
         
+
+            return View("Select",userHistory);
+        }
+
+              
         [HttpPost]
         public IActionResult Post()
         {

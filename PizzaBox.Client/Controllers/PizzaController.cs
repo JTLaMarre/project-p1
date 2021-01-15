@@ -4,32 +4,37 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PizzaBox.Client.Models;
-
+using PizzaBox.Storing;
 namespace PizzaBox.Client.Controllers
 {
-[Route("[controller]")]
+    [Route("[controller]")]
     public class PizzaController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public PizzaController(ILogger<HomeController> logger)
+  private readonly PizzaBoxRepository _ctx;
+
+        public PizzaController(PizzaBoxRepository context)
         {
-            _logger = logger;
+            _ctx = context;
         }
 
-        
-        
-        public IActionResult Pizza(){
-            return View();
+        [HttpGet("{id}")]
+        public IActionResult Get(long id)
+        {   
+            var pizzas = new OrderPizzasViewModel();
+            pizzas.Pizzas = _ctx.getOrdersPizzas(id);
+
+            return View("OrderPizzas",pizzas);
         }
-        public void Post(){
+        public void Post()
+        {
             // need to post pizzas to db
         }
-        public void Delete(){
+        public void Delete()
+        {
             // need method for Deleting from db
         }
-      
+
     }
 }
