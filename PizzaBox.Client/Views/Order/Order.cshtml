@@ -12,141 +12,52 @@
 <form action="/order/post"method="POST">
 @Html.AntiForgeryToken()
 <div class="row">
-  <div class="col-sm">
+  <div class="col-md"></div>
+  <div class="col">
 @foreach (var item in Model.Stores)
 {
 <input type="radio" name="store" id="@item">
 <label for="@item">@item</label>
     }
   </div>
+  <div class="col-md"></div>
 </div>
 <div class="row">
+  <div class="col-md"></div>
 <div class="col">
-<button class="btn btn-danger">
+<button class="btn btn-danger btn-lg">
   Pepperoni 
 </button>
 </div>
 <div class="col">
-<button class="btn btn-danger">
+<button class="btn btn-danger btn-lg">
   Four Cheese
 </button>
 </div>
+<div class="col-md"></div>
 </div>
+<br>
 <div class="row">
+  <div class="col-md"></div>
 <div class="col">
-<button class="btn btn-danger">
+<button class="btn btn-danger btn-lg">
   Meat Pizza
 </button>
 </div>
 <div class="col">
-<button class="btn btn-danger">
+<button class="btn btn-danger btn-lg">
   Veggie Pizza
 </button>
 </div>
+<div class="col-md"></div>
 </div>
-  
-
-  
-  <button type="submit"class="btn btn-danger">Place Order</button>
+  <br>
+<div class="row">
+<div class="col-md"></div>
+<div class="col-md">
+  <button type="submit"class="btn btn-danger ">Finish Order</button>
+</div>
+<div class="col-md"></div>
+</div>  
 </form>
 
-@* html helper way *@
-@* @using (@Html.BeginForm("post","order", null,FormMethod.Post))
-{
-  @Html.AntiForgeryToken() 
-  @Html.RadioButtonFor(m => m.Stores, Model.Store)
-  
-} *@
-@* tag helper way *@
-@* <form asp-action="post" asp-controller="order" method="POST">
-
-</form> *@
-
-@* <div class="row justify-content-center">
-  <div class="col-sm"></div>
-  <div class="col-sm">
-    <h2 class=" bg-danger text-white">Lets Start a Pizza Order</h2>
-  </div>
-  <div class="col-sm"></div>
-
-</div>
-<div class="row justify-content-center">
-  <div class="col-md"></div>
-  <div class="col-md">
-    <form>
-      <h3 class="bg-danger text-white">Choose a Store</h3>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            @foreach (var s in ViewBag.Stores)
-            {
-                <label for="store1">
-              <input type="checkbox">
-              @s
-            </label>
-            <br/>
-            }
-            
-          </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-
-        <h3 class="bg-danger text-white"> Choose Pizzas ALL Pizza 10$ each</h3>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <label for="pepperoni">
-                <input type="checkbox" name="peppizzas" name="amountpep">
-                Pepperoni
-              </label>
-            </div>
-            <input type="number" class="form-control">
-          </div>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <label for="cheese">
-                <input type="checkbox"name="cheesepizzas">
-                Four Cheese
-              </label>
-            </div>
-            <input type="number" class="form-control" name="amountcheese">
-          </div>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <label for="meat">
-                <input type="checkbox" name="meatpizzas">
-                Meat Pizza
-              </label>
-            </div>
-            <input type="number" class="form-control" name="amountmeat">
-          </div>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <label for="veggie">
-                <input type="checkbox" name="vegpizzas">
-                Veggie Pizza
-              </label>
-            </div>
-            <input type="number" class="form-control" name="amountveg">
-          </div>
-        </div>
-        </div>
-
-      </div>
-
-      <br>
-
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-  <div class="col-md"></div>
-
-</div> *@
