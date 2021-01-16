@@ -10,6 +10,9 @@ namespace PizzaBox.Client.Models
             Pizzas = new List<APizzaModel>();
         }
         public string User {get;set;}
+        public int Total {get;set;}
+
+        public string Store {get;set;}
         
         public IEnumerable<APizzaModel> Pizzas {get;set;}
 

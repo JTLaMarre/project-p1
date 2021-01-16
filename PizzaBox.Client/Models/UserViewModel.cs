@@ -9,6 +9,7 @@ namespace PizzaBox.Client.Models
         
         public List<string> Users {get;set;}
         
+        public string User{get;set;}
         public IEnumerable<Order> Orders {get;set;}
 
         

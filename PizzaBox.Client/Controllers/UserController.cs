@@ -15,6 +15,7 @@ namespace PizzaBox.Client.Controllers
     {
 
         private readonly PizzaBoxRepository _ctx;
+               
 
         public UserController(PizzaBoxRepository context)
         {
@@ -31,7 +32,7 @@ namespace PizzaBox.Client.Controllers
             return View("User", user);
         }
         [HttpGet("{id}")]
-        public IActionResult Get(string id){
+        public IActionResult History(string id){
 
             var userHistory = new OrderHistoryViewModel();
             userHistory.User=id;
@@ -48,15 +49,15 @@ namespace PizzaBox.Client.Controllers
 
               
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post(string user)
         {
-            if(ModelState.IsValid){
-            var user = new User();
-
-            return View("User",user);
-            }
-
-            return View("home");
+            var model = new UserViewModel();
+            var insertedUser = new User();
+            insertedUser.Name = user;
+            _ctx.newUser(insertedUser);
+            model.Users = _ctx.GetUsers();
+            
+           return View("UserPass",model);
 
         }
     }

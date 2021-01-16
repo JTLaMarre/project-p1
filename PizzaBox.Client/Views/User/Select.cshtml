@@ -4,11 +4,14 @@
 @model PizzaBox.Client.Models.OrderHistoryViewModel
 
 <h2>@Model.User</h2>
+<form asp-controller="Order" asp-action="get" method="GET">
+<button class="btn btn-danger" tpye="submit">Start New Order</button>
+</form>
+<h3>Previous Orders</h3>
+<hr>
 @foreach (var item in Model.Orders)
 {
-      
-
-    <h4>Order: @item.EntityId</h4>
+       <h4>Order: @item.EntityId</h4>
     <form asp-controller="Pizza" asp-action="get" asp-route-id="@item.EntityId" method="GET" >
         <button type="submit"  class="btn btn-primary">order details</button>
         </form>

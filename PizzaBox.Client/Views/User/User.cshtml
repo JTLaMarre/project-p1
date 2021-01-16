@@ -7,7 +7,7 @@
 {
     <li>
         @user 
-        <form asp-controller="User" asp-action="get" asp-route-id="@user" method="GET" >
+        <form asp-controller="User" asp-action="history" asp-route-id="@user" method="GET" >
         <button type="submit"  class="btn btn-primary"  value ="@user">select</button>
         </form>
         </li>
@@ -15,8 +15,8 @@
     <br>
 }
 </ul>
-<form asp-controller="user" asp-action="" method="POST">
+<form asp-controller="user" asp-action="post" method="POST">
 @Html.AntiForgeryToken()
-<input type="text" name="Name" id="Name">
-<button type="submit" class="btn btn-primary">add user</button>
+<input type="text" asp-for="User" name="User"/>
+<button type="submit" class="btn btn-primary" >add user</button>
 </form>

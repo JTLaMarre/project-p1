@@ -1,7 +1,15 @@
 
 @model PizzaBox.Client.Models.OrderPizzasViewModel
 
+<h3>Order History</h3>
+<hr>
+
+@* <h2>For: @Model.User</h2>
+<h2>From: @Model.Store</h2> *@
+
+<h2>Pizzas Ordered</h2>
 @foreach (var item in Model.Pizzas)
 {
     <p>@item.Name id: @item.EntityId</p>
 }
+@* <h2>Total: @Model.Total</h2> *@

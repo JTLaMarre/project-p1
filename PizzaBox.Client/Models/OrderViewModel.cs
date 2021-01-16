@@ -14,6 +14,9 @@ namespace PizzaBox.Client.Models
         {
             this.id = id;
         }
+        public OrderViewModel(){
+            
+        }
 
         public string id { get; set; }
 
@@ -24,20 +27,12 @@ namespace PizzaBox.Client.Models
         [Range(1, 50)]
         public List<string> Pizzas { get; set; }
 
-        public string Store { get; set; }
+        public string Store { get; set;}
+
+        public string User {get;set;}
 
         public List<string> PizzaSelection { get; set; }
 
-        public OrderViewModel()
-        {
-           
-            Pizzas = new List<string>()
-            {
-                "Pepperoni",
-                "Meat",
-                "Four Cheese",
-                "Veggie"
-            };
-        }
+        
     }
 }

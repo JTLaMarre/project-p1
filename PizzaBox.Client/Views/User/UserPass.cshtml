@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Users Page";
+}
+@model PizzaBox.Client.Models.UserViewModel
+<ul>
+@foreach (var user in Model.Users)
+{
+    <li>
+        @user 
+        <form asp-controller="User" asp-action="get" asp-route-id="@user" method="GET" >
+        <button type="submit"  class="btn btn-primary"  value ="@user">select</button>
+        </form>
+        </li>
+    
+    <br>
+}
+</ul>

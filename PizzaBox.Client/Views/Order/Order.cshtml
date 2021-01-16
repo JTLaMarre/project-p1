@@ -11,19 +11,41 @@
 
 <form action="/order/post"method="POST">
 @Html.AntiForgeryToken()
+<div class="row">
+  <div class="col-sm">
 @foreach (var item in Model.Stores)
 {
 <input type="radio" name="store" id="@item">
 <label for="@item">@item</label>
     }
+  </div>
+</div>
+<div class="row">
+<div class="col">
+<button class="btn btn-danger">
+  Pepperoni 
+</button>
+</div>
+<div class="col">
+<button class="btn btn-danger">
+  Four Cheese
+</button>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<button class="btn btn-danger">
+  Meat Pizza
+</button>
+</div>
+<div class="col">
+<button class="btn btn-danger">
+  Veggie Pizza
+</button>
+</div>
+</div>
   
-@foreach (var item in Model.Pizzas)
-{
-  <label for="@item">
-                <input type="checkbox"name="@item">
-                @item
-              </label>  
-}
+
   
   <button type="submit"class="btn btn-danger">Place Order</button>
 </form>
