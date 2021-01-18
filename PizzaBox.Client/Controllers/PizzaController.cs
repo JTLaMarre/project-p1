@@ -23,7 +23,10 @@ namespace PizzaBox.Client.Controllers
         public IActionResult Get(long id)
         {   
             var pizzas = new OrderPizzasViewModel();
+            var order = _ctx.getOrder(id);
             pizzas.Pizzas = _ctx.getOrdersPizzas(id);
+            pizzas.Total = order.Total;
+            pizzas.Store = _ctx.getOrdersStore(order);
 
             return View("OrderPizzas",pizzas);
         }

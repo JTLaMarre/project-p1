@@ -28,11 +28,13 @@ namespace PizzaBox.Client.Controllers
            
             return View("Order",Order);
         }
-        [HttpGet("{id}")]
-        public IActionResult GetAction(string id)
-        {
-            return View("Order",new OrderViewModel(id));
-        }
+        // [HttpGet("{id}")]
+        // public IActionResult UserOrder(string id)
+        // {
+        //     var model = new OrderViewModel();
+
+        //     return View("Order",model);
+        // }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

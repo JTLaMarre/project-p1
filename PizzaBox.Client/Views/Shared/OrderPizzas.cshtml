@@ -4,12 +4,15 @@
 <h3>Order History</h3>
 <hr>
 
-@* <h2>For: @Model.User</h2>
-<h2>From: @Model.Store</h2> *@
-
-<h2>Pizzas Ordered</h2>
-@foreach (var item in Model.Pizzas)
-{
-    <p>@item.Name id: @item.EntityId</p>
+@{
+    int Total = 0;
 }
-@* <h2>Total: @Model.Total</h2> *@
+
+<h2>Pizzas Ordered From @Model.Store</h2>
+@foreach (var item in Model.Pizzas)
+{   
+    Total = Total + 10;
+    <p>@item.Name</p>
+    @* Might need to display entity id not sure yet tho *@
+}
+<h2>Total:$ @Total </h2>

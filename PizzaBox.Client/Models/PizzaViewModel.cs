@@ -11,7 +11,7 @@ namespace PizzaBox.Client.Models
 
         public List<string> Toppings {get;set;}
 
-        public decimal Price {get;set;}
+        public decimal Total {get;set;}
 
 
 
