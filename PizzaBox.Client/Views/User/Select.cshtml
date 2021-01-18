@@ -4,7 +4,7 @@
 @model PizzaBox.Client.Models.OrderHistoryViewModel
 
 <h2>@Model.User</h2>
-<form asp-controller="Order" asp-action="get" method="GET">
+<form asp-controller="Store" asp-action="UserStore" method="GET">
 <button class="btn btn-danger" tpye="submit">Start New Order</button>
 </form>
 <h3>Previous Orders</h3>

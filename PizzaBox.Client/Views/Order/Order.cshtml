@@ -11,16 +11,13 @@
 
 
 @Html.AntiForgeryToken()
-<div class="row">
-  <div class="col-md"></div>
-  <div class="col">
-@foreach (var item in Model.Stores)
-{
-<input type="radio" name="store" id="@item">
-<label for="@item">@item</label>
-    }
+<div class = "Row">
+  <div class ="col"></div>
+  <div class ="col">
+    <h2>You have choosen @Model.Store</h2>
   </div>
-  <div class="col-md"></div>
+  <div class ="col"></div>
+</div>
 </div>
 <div class="row">
   <div class="col-md"></div>
@@ -47,7 +44,7 @@
   <div class="col-md"></div>
 <div class="col">
   <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
-<input type="text" asp-formaction="Pizza" name="Pizza" value="Meat Pizza" class="d-none"/>
+<input type="text" asp-formaction="Pizza" name="Pizza" value="Meat" class="d-none"/>
 <button class="btn btn-danger btn-lg">
   Meat Pizza
 </button>
@@ -64,13 +61,7 @@
 <div class="col-md"></div>
 </div>
   <br>
-<div class="row">
-<div class="col-md"></div>
-<div class="col-md">
-  <button type="submit"class="btn btn-danger ">Finish Order</button>
-</div>
-<div class="col-md"></div>
-</div>  
+
 
 
 

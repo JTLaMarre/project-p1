@@ -17,7 +17,7 @@ namespace PizzaBox.Client.Controllers
         public StoreController(PizzaBoxRepository context){
             _ctx=context;
         }
-    [HttpGet]
+        [HttpGet("/stores")]
         public IActionResult Get()
         {
             var store = new StoreViewModel(){
@@ -25,6 +25,13 @@ namespace PizzaBox.Client.Controllers
             };
            
             return View("Store",store);
+        }
+        [HttpGet("/UserStore")]
+        public IActionResult UserStore()
+        {
+            var order = new OrderViewModel();
+                 order.Stores = _ctx.GetStores();
+            return View("SelectUserStore",order);
         }
     }
 }

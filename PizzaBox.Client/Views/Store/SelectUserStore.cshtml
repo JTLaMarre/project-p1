@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Choose a Store";
+}
+
+@model PizzaBox.Client.Models.OrderViewModel
+
+
+
+<div class="row">
+  <div class="col">
+   <h1>Choose a Store:</h1> 
+  </div>
+    <form asp-controller="Order" asp-action="get" method="GET">
+  <div class="col">
+
+@foreach (var item in Model.Stores)
+{
+<input type="radio"asp-for="Store" name="Store" value = "@item" id="@item">
+<label >@item</label>
+    }
+    <button type="submit" class="btn btn-primary">Submit Store Selection</button>
+    </form>
+  </div>
+  

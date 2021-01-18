@@ -20,12 +20,16 @@ namespace PizzaBox.Client.Models
 
         public string id { get; set; }
 
+        public long EntityId {get;set;}
 
         [Required]
         public List<string> Stores { get; set; }
         [Required]
         [Range(1, 50)]
-        public List<string> Pizzas { get; set; }
+        public IEnumerable<APizzaModel> Pizzas { get; set; }
+
+        public List<string> PizzaSelection{get;set;}
+        
 
         public string Store { get; set;}
 
