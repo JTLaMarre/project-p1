@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PizzaBox.Client.Models;
+using PizzaBox.Domain.Models;
 using PizzaBox.Storing;
 
 namespace PizzaBox.Client.Controllers
@@ -15,38 +16,32 @@ namespace PizzaBox.Client.Controllers
 
         private readonly PizzaBoxRepository _ctx;
 
-        public OrderController(PizzaBoxRepository context){
-            _ctx=context;
+        public OrderController(PizzaBoxRepository context)
+        {
+            _ctx = context;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var Order = new OrderViewModel(){
+            var Order = new OrderViewModel()
+            {
                 Stores = _ctx.GetStores()
             };
-           
-            return View("Order",Order);
-        }
-        // [HttpGet("{id}")]
-        // public IActionResult UserOrder(string id)
-        // {
-        //     var model = new OrderViewModel();
 
-        //     return View("Order",model);
-        // }
+            return View("Order", Order);
+        }
+
+
+      
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Post(OrderViewModel order)
+        public IActionResult ContinueOrder(string pizza)
         {
+            var model = new OrderViewModel();
+            model.Pizza = pizza;
             
-            
-            if (ModelState.IsValid)
-            {   
-                return View("OrderPass");
-            }
-            return View("Home");
+            return View("OrderContinue",model);
         }
     }
 }

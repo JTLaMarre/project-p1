@@ -82,3 +82,4 @@ C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\bin\Debug\net5.0\Micr
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\User\Select.cshtml.g.cs
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Shared\OrderPizzas.cshtml.g.cs
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\User\UserPass.cshtml.g.cs
+C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Order\OrderContinue.cshtml.g.cs

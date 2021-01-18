@@ -9,7 +9,7 @@
 
 @model PizzaBox.Client.Models.OrderViewModel
 
-<form action="/order/post"method="POST">
+
 @Html.AntiForgeryToken()
 <div class="row">
   <div class="col-md"></div>
@@ -25,14 +25,20 @@
 <div class="row">
   <div class="col-md"></div>
 <div class="col">
-<button class="btn btn-danger btn-lg">
+<form asp-controller="Order" asp-action="ContinueOrder" method="POST">
+<input type="text" asp-formaction="Pizza" name="Pizza" value="Pepperoni" class="d-none"/>
+<button class="btn btn-danger btn-lg" type="submit">
   Pepperoni 
 </button>
+</form>
 </div>
 <div class="col">
+  <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
+<input type="text" asp-formaction="Pizza" name="Pizza" value="Four Cheese" class="d-none"/>
 <button class="btn btn-danger btn-lg">
   Four Cheese
 </button>
+  </form>
 </div>
 <div class="col-md"></div>
 </div>
@@ -40,14 +46,20 @@
 <div class="row">
   <div class="col-md"></div>
 <div class="col">
+  <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
+<input type="text" asp-formaction="Pizza" name="Pizza" value="Meat Pizza" class="d-none"/>
 <button class="btn btn-danger btn-lg">
   Meat Pizza
 </button>
+  </form>
 </div>
 <div class="col">
+  <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
+<input type="text" asp-formaction="Pizza" name="Pizza" value="Veggie" class="d-none"/>
 <button class="btn btn-danger btn-lg">
   Veggie Pizza
 </button>
+  </form>
 </div>
 <div class="col-md"></div>
 </div>
@@ -59,7 +71,7 @@
 </div>
 <div class="col-md"></div>
 </div>  
-</form>
+
 
 
 

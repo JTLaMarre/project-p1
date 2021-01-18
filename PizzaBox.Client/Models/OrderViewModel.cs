@@ -31,7 +31,7 @@ namespace PizzaBox.Client.Models
 
         public string User {get;set;}
 
-        public List<string> PizzaSelection { get; set; }
+        public string Pizza {get;set;}
 
         
     }
