@@ -58,7 +58,7 @@ namespace PizzaBox.Client.Controllers
         }
 
         [HttpPost("/AddPizza")]
-        public IActionResult AddPizza(string pizza, string Store, string User, long EntityId, string Pizzas)
+        public IActionResult AddPizza(string pizza, string Store, string User, long EntityId)
         {
             var model = new OrderViewModel();
 
@@ -116,6 +116,28 @@ namespace PizzaBox.Client.Controllers
             _ctx.Save();
 
             return View("OrderFinished", model);
+        }
+        [HttpPost("/RemovePizza")]
+        public IActionResult RemovePizza(string Store, string User, long EntityId,long PizzaId)
+        {
+            _ctx.RemovePizza(PizzaId);
+
+            var model = new OrderViewModel();
+
+            Order order = _ctx.getOrder(EntityId);
+            
+            model.Pizza="none";
+            model.Order = order;
+            model.Pizzas = _ctx.getOrdersPizzas(EntityId);
+            foreach (var item in model.Pizzas)
+            {
+                model.Total = model.Total + 10;
+            }
+            model.EntityId = order.EntityId;
+            model.User = User;
+            model.Store = Store;
+
+            return View("RemovePizza",model);
         }
     }
 }

@@ -44,6 +44,8 @@ namespace PizzaBox.Client.Models
         public int Total {get;set;}
 
         public int StoreTotal{get;set;}
+
+        public long PizzaId{get;set;}
         
     }
 }
