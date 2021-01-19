@@ -2,9 +2,29 @@
     ViewData["Title"] = "Stores Page";
 }
 @model PizzaBox.Client.Models.StoreViewModel
-<ul>
-@foreach (var Store in Model.Stores)
+
+@foreach (var store in Model.Stores)
 {
-    <li>@Store</li>
+        <div class="row">
+    
+        <div class="col">
+        <p>
+        @store: 
+        </p>
+        </div>
+        <div class="col">
+        <form asp-controller="Store" asp-action="history" method="GET" >
+            <input type="text" class="" asp-for="Store" name="Store" value="@store">
+        <button type="submit"  class="btn btn-primary"  value ="@store">select</button>
+        </form>
+        </div>
+        <div class="col">
+        <form asp-controller="store" asp-action="Sales" asp-route-id="@store" method="GET" >
+        <button type="submit"  class="btn btn-danger"  value ="@store">Total Sales</button>
+        </form>
+        </div>
+        
+        </div>
+    
+    <hr>
 }
-</ul>

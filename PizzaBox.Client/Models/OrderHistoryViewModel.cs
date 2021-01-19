@@ -11,6 +11,8 @@ namespace PizzaBox.Client.Models
 
         }
         public string User {get;set;}
+
+        public string Store {get;set;}
         
         public IEnumerable<Order> Orders {get;set;}
 
