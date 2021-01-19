@@ -1,12 +1,13 @@
 @{
-    ViewData["Title"] = "Users History";
+    ViewData["Title"] = "Store History";
 }
-@model PizzaBox.Client.Models.OrderHistoryViewModel
+@model PizzaBox.Client.Models.StoreViewModel
+
 
 @foreach (var item in Model.Orders)
 {
-       <h4>Order: @item.EntityId</h4>
-    <form asp-controller="Pizza" asp-action="get" asp-route-id="@item.EntityId" method="GET" >
+       <h4>Order: @item</h4>
+    <form asp-controller="Pizza" asp-action="get" asp-route-id="@item" method="GET" >
         <button type="submit"  class="btn btn-primary">order details</button>
         </form>
     

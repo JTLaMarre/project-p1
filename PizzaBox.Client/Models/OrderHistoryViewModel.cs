@@ -16,6 +16,8 @@ namespace PizzaBox.Client.Models
         
         public IEnumerable<Order> Orders {get;set;}
 
+        public List<long> OrderId {get;set;}
+
         
 
     }

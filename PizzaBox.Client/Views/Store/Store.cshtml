@@ -14,13 +14,14 @@
         </div>
         <div class="col">
         <form asp-controller="Store" asp-action="history" method="GET" >
-            <input type="text" class="" asp-for="Store" name="Store" value="@store">
+            <input type="text" class="d-none" asp-for="Store" name="Store" value="@store">
         <button type="submit"  class="btn btn-primary"  value ="@store">select</button>
         </form>
         </div>
         <div class="col">
-        <form asp-controller="store" asp-action="Sales" asp-route-id="@store" method="GET" >
-        <button type="submit"  class="btn btn-danger"  value ="@store">Total Sales</button>
+        <form asp-controller="store" asp-action="Sales"  method="GET" >
+        <input type="text" class="d-none" asp-for="Store" name="Store" value="@store">
+        <button type="submit"  class="btn btn-danger">Total Sales</button>
         </form>
         </div>
         

@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Store History";
+}
+@model PizzaBox.Client.Models.StoreViewModel
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <h1>@Model.Store Total Sales Revenue to date:$ @Model.Revenue</h1>
+    </div>
+    <div class="col"></div>
+</div>
+<div class="row">
+<div class="col" ></div>
+<div class="col" >
+    <a href="/Home" class="btn btn-primary">Return Home</a>
+    <br>
+    <br>
+    <a href="/Stores" class="btn btn-info">
+    Return to Stores
+    </a>
+    <br>
+    <br>
+</div>
+<div class="col" ></div>
+</div>

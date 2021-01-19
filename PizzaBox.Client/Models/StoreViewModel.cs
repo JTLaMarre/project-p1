@@ -17,7 +17,7 @@ namespace PizzaBox.Client.Models
 
         public int Revenue {get;set;}
 
-        public IEnumerable<Order> Orders {get;set;}
+        public List<long> Orders {get;set;}
 
     }
 }

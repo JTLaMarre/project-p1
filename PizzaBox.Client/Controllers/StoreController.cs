@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PizzaBox.Client.Models;
+using PizzaBox.Domain.Models;
 using PizzaBox.Storing;
 
 namespace PizzaBox.Client.Controllers
@@ -40,23 +41,28 @@ namespace PizzaBox.Client.Controllers
       [HttpGet("/History")]
         public IActionResult History(string Store){
 
-            var model = new OrderHistoryViewModel();
+            var model = new StoreViewModel();
             model.Store=Store;
 
             var store = _ctx.GetStore(Store);
+
             long storeId = _ctx.GetStoreId(Store);
 
-            model.Orders = _ctx.getStoreOrders(storeId);
-       
+            var Orders = _ctx.getStoreOrders(storeId);
+
+            model.Orders = Orders;
 
                    
 
             return View("StoreHistory",model);
         }
         [HttpGet("/sales")]
-        public IActionResult StoreSales(string store)
+        public IActionResult Sales(string store)
         {
-            return View("StoreSales");
+            var model = new StoreViewModel();
+            model.Store = store;
+            model.Revenue = _ctx.GetRevenue(store);
+            return View("StoreSales",model);
         }
     }
 }
