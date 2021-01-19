@@ -33,10 +33,13 @@ namespace PizzaBox.Client.Models
 
         public string Store { get; set;}
 
+        public long StoreId {get;set;}
+
         public string User {get;set;}
 
         public string Pizza {get;set;}
 
+        public Order Order {get;set;}
         
     }
 }

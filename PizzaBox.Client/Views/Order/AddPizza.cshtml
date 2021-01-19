@@ -24,6 +24,9 @@
 <div class="col">
 <form asp-controller="Order" asp-action="AddPizza" method="POST">
 <input type="text" asp-formaction="Pizza" name="Pizza" value="Pepperoni Pizza" class="d-none"/>
+<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
+<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
+<input type="text" class="d-none" asp-for="EntityId" name="EntityId" value ="@Model.EntityId">
 <button class="btn btn-danger btn-lg" type="submit">
   Pepperoni 
 </button>
@@ -32,6 +35,9 @@
 <div class="col">
   <form asp-controller="Order" asp-action="AddPizza" method="POST">
 <input type="text" asp-formaction="Pizza" name="Pizza" value="Four Cheese Pizza" class="d-none"/>
+<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
+<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
+<input type="text" class="d-none" asp-for="EntityId" name="EntityId" value ="@Model.EntityId">
 <button class="btn btn-danger btn-lg">
   Four Cheese
 </button>
@@ -45,6 +51,9 @@
 <div class="col">
   <form asp-controller="Order" asp-action="AddPizza" method="POST">
 <input type="text" asp-formaction="Pizza" name="Pizza" value="Meat Pizza" class="d-none"/>
+<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
+<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
+<input type="text" class="d-none" asp-for="EntityId" name="EntityId" value ="@Model.EntityId">
 <button class="btn btn-danger btn-lg">
   Meat Pizza
 </button>
@@ -53,6 +62,10 @@
 <div class="col">
   <form asp-controller="Order" asp-action="AddPizza" method="POST">
 <input type="text" asp-formaction="Pizza" name="Pizza" value="Veggie Pizza" class="d-none"/>
+<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
+<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
+<input type="text" class="d-none" asp-for="EntityId" name="EntityId" value ="@Model.EntityId">
+
 <button class="btn btn-danger btn-lg">
   Veggie Pizza
 </button>

@@ -27,9 +27,10 @@ namespace PizzaBox.Client.Controllers
             return View("Store",store);
         }
         [HttpGet("/UserStore")]
-        public IActionResult UserStore()
+        public IActionResult UserStore(string User)
         {
             var order = new OrderViewModel();
+                order.User = User;
                  order.Stores = _ctx.GetStores();
             return View("SelectUserStore",order);
         }

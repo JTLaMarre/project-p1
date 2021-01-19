@@ -10,7 +10,7 @@ namespace PizzaBox.Client.Models
         [Required]
         public List<string> Stores {get;set;}
 
-        
+        public long EntityId {get;set;}
 
     }
 }

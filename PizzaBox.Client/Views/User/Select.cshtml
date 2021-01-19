@@ -5,6 +5,7 @@
 
 <h2>@Model.User</h2>
 <form asp-controller="Store" asp-action="UserStore" method="GET">
+<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
 <button class="btn btn-danger" tpye="submit">Start New Order</button>
 </form>
 <h3>Previous Orders</h3>
