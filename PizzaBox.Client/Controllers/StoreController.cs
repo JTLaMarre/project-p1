@@ -38,11 +38,12 @@ namespace PizzaBox.Client.Controllers
             order.Stores = _ctx.GetStores();
             return View("SelectUserStore", order);
         }
-      [HttpGet("/History")]
-        public IActionResult History(string Store){
+        [HttpGet("/History")]
+        public IActionResult History(string Store)
+        {
 
             var model = new StoreViewModel();
-            model.Store=Store;
+            model.Store = Store;
 
             var store = _ctx.GetStore(Store);
 
@@ -52,9 +53,9 @@ namespace PizzaBox.Client.Controllers
 
             model.Orders = Orders;
 
-                   
 
-            return View("StoreHistory",model);
+
+            return View("StoreHistory", model);
         }
         [HttpGet("/sales")]
         public IActionResult Sales(string store)
@@ -62,7 +63,8 @@ namespace PizzaBox.Client.Controllers
             var model = new StoreViewModel();
             model.Store = store;
             model.Revenue = _ctx.GetRevenue(store);
-            return View("StoreSales",model);
+            return View("StoreSales", model);
         }
+        
     }
 }

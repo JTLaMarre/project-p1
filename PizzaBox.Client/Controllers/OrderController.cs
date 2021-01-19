@@ -25,11 +25,16 @@ namespace PizzaBox.Client.Controllers
         public IActionResult Get(string Store, string User)
         {
             var Order = new OrderViewModel();
-            
+            var OrderObject = new Order();
+            OrderObject.StoreEntityId=_ctx.GetStoreId(Store);
+            OrderObject.UserEntityId=_ctx.GetUsersId(User);
+            _ctx.newOrder(OrderObject);
+
 
             
             Order.Store = Store;
             Order.User = User;
+            Order.EntityId=OrderObject.EntityId;
             
             return View("Order", Order);
         }
@@ -38,22 +43,24 @@ namespace PizzaBox.Client.Controllers
 
 
         [HttpPost("/ContinueOrder")]
-        public IActionResult ContinueOrder( string User, string Store, string Pizzas)
+        public IActionResult ContinueOrder( string User, string Store, string Pizzas, long EntityId)
         {
             var model = new OrderViewModel();
             
-            var order = new Order();
+            var order = _ctx.getOrder(EntityId);
            
-            order.StoreEntityId = _ctx.GetStoreId(Store);
-            order.UserEntityId = _ctx.GetUsersId(User);
-            _ctx.newOrder(order);
+          
             
             model.Pizzas = _ctx.getOrdersPizzas(order.EntityId);
-            model.EntityId = order.EntityId;
-            model.User = User;
-            model.Store = Store;
-            model.StoreId = _ctx.GetStoreId(Store);
 
+            model.EntityId = order.EntityId;
+
+            model.User = User;
+
+            model.Store = Store;
+            
+            model.StoreId = _ctx.GetStoreId(Store);
+            
             return View("OrderContinue", model);
         }
 
@@ -64,7 +71,7 @@ namespace PizzaBox.Client.Controllers
 
             Order order = _ctx.getOrder(EntityId);
             model.Pizza = pizza;
-                        switch (pizza)
+            switch (pizza)
             {
                 case "Pepperoni Pizza":
                     order.AddPizza(1);

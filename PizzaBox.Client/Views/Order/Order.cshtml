@@ -19,6 +19,7 @@
   <div class ="col"><form asp-controller="Order" asp-action="ContinueOrder" method="POST">
 <input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
 <input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
+<input type="text" class="d-none" asp-for="EntityId" value="@Model.EntityId">
 <button class="btn btn-danger btn-lg" type="submit">
   Contine to Order 
 </button>
