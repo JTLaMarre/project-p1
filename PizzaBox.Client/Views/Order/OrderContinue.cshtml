@@ -6,16 +6,9 @@
 <div class="col-md"></div>
 <div class="col-md">
 <h1>Pizzas</h1>
-<h4> Yov Have added @Model.Pizza To the Order</h4>
-
-@if (Model.Pizzas!=null)
-{
-@foreach (var item in Model.Pizzas)
-{
-    <h4>@item.Name</h4>    
-}
- }
-
+<h4> Let's Start your Order at @Model.Store</h4>
+ 
+<h4> Current Total:$ @Model.Total </h4>
 </div>
 <div class="col-md"></div>
 </div>

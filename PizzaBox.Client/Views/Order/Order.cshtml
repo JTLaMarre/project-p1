@@ -11,67 +11,17 @@
 
 
 @Html.AntiForgeryToken()
-<div class = "Row">
+<div class = "row">
   <div class ="col"></div>
   <div class ="col">
     <h2>@Model.User you have choosen @Model.Store</h2>
   </div>
-  <div class ="col"></div>
-</div>
-</div>
-<div class="row">
-  <div class="col-md"></div>
-<div class="col">
-<form asp-controller="Order" asp-action="ContinueOrder" method="POST">
-<input type="text" asp-formaction="Pizza" name="Pizza" value="Pepperoni" class="d-none"/>
+  <div class ="col"><form asp-controller="Order" asp-action="ContinueOrder" method="POST">
 <input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
 <input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
 <button class="btn btn-danger btn-lg" type="submit">
-  Pepperoni 
+  Contine to Order 
 </button>
-</form>
+</form></div>
 </div>
-<div class="col">
-  <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
-<input type="text" asp-formaction="Pizza" name="Pizza" value="Four Cheese" class="d-none"/>
-<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
-<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
-<button class="btn btn-danger btn-lg">
-  Four Cheese
-</button>
-  </form>
 </div>
-<div class="col-md"></div>
-</div>
-<br>
-<div class="row">
-  <div class="col-md"></div>
-<div class="col">
-  <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
-<input type="text" asp-formaction="Pizza" name="Pizza" value="Meat" class="d-none"/>
-<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
-<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
-<button class="btn btn-danger btn-lg">
-  Meat Pizza
-</button>
-  </form>
-</div>
-<div class="col">
-  <form asp-controller="Order" asp-action="ContinueOrder" method="POST">
-<input type="text" asp-formaction="Pizza" name="Pizza" value="Veggie" class="d-none"/>
-<input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
-<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
-<button class="btn btn-danger btn-lg">
-  Veggie Pizza
-</button>
-  </form>
-</div>
-<div class="col-md"></div>
-</div>
-  <br>
-
-
-
-
-
-

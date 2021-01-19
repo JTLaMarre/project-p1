@@ -1,0 +1,19 @@
+@model PizzaBox.Client.Models.OrderViewModel
+
+
+<div class="row">
+<div class="col"></div>
+<div class="col">
+    <h1>Final Order from @Model.Store</h1>
+    <hr>
+    <h2>@Model.User you have ordered:</h2>
+    @foreach (var item in Model.Pizzas)
+    {
+        <p>
+            @item.Name
+        </p>
+    }
+    <h2>Total = $ @Model.Total</h2>
+</div>
+<div class="col"></div>
+</div>

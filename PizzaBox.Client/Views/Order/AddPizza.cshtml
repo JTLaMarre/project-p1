@@ -12,10 +12,11 @@
 {
 @foreach (var item in Model.Pizzas)
 {
-    <h4>@item.Name</h4>    
+    <h2>@item.Name</h2>   
+     
 }
  }
-
+<h4> Current Total: $ @Model.Total </h4>
 </div>
 <div class="col-md"></div>
 </div>
@@ -77,7 +78,13 @@
 <div class="row">
 <div class="col-md"></div>
 <div class="col-md">
+  <form asp-controller="Order" asp-action="FinishOrder" method="Post">
   <button type="submit"class="btn btn-danger ">Finish Order</button>
+  <input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
+<input type="text" class="d-none" asp-for="Store"name="Store" value =@Model.Store>
+  <input type="text" class="d-none" asp-for="EntityId" name="EntityId" value ="@Model.EntityId">
+  <input type="text" class="d-none" asp-for="Total" name="Total"value = "@Model.Total">
+  </form>
 </div>
 <div class="col-md"></div>
 </div>  

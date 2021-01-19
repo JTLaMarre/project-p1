@@ -40,6 +40,10 @@ namespace PizzaBox.Client.Models
         public string Pizza {get;set;}
 
         public Order Order {get;set;}
+
+        public int Total {get;set;}
+
+        public int StoreTotal{get;set;}
         
     }
 }
