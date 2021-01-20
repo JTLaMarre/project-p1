@@ -2,21 +2,28 @@
     ViewData["Title"] = "Users Page";
 }
 @model PizzaBox.Client.Models.UserViewModel
-<ul>
-@foreach (var user in Model.Users)
-{
-    <li>
-        @user 
-        <form asp-controller="User" asp-action="history" asp-route-id="@user" method="GET" >
-        <button type="submit"  class="btn btn-primary"  value ="@user">select</button>
-        </form>
-        </li>
-    
-    <br>
-}
-</ul>
-<form asp-controller="user" asp-action="post" method="POST">
-@Html.AntiForgeryToken()
-<input type="text" asp-for="User" name="User" required/>
-<button type="submit" class="btn btn-primary" >add user</button>
-</form>
+<div class="row">
+    <div class="col-md">
+
+        <ul>
+            @foreach (var user in Model.Users)
+            {
+                <li>
+                    @user
+                    <form asp-controller="User" asp-action="history" asp-route-id="@user" method="GET">
+                        <button type="submit" class="btn btn-primary" value="@user">select</button>
+                    </form>
+                </li>
+
+                <br>
+            }
+        </ul>
+    </div>
+<div class="col-md">
+    <form asp-controller="user" asp-action="post" method="POST">
+        @Html.AntiForgeryToken()
+        <input type="text" asp-for="User" name="User" required />
+        <button type="submit" class="btn btn-primary">add user</button>
+    </form>
+</div>
+</div>
