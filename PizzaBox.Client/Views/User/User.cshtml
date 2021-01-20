@@ -17,6 +17,6 @@
 </ul>
 <form asp-controller="user" asp-action="post" method="POST">
 @Html.AntiForgeryToken()
-<input type="text" asp-for="User" name="User"/>
+<input type="text" asp-for="User" name="User" required/>
 <button type="submit" class="btn btn-primary" >add user</button>
 </form>

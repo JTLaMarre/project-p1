@@ -15673,6 +15673,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\Views\\Order\\CancelOrder.cshtml",
+      "TargetPath": "Views\\Order\\CancelOrder.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lorda\\Sandbox\\revature\\project-p1\\PizzaBox.Client\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

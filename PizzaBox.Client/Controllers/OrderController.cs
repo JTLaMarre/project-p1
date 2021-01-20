@@ -26,16 +26,16 @@ namespace PizzaBox.Client.Controllers
         {
             var Order = new OrderViewModel();
             var OrderObject = new Order();
-            OrderObject.StoreEntityId=_ctx.GetStoreId(Store);
-            OrderObject.UserEntityId=_ctx.GetUsersId(User);
+            OrderObject.StoreEntityId = _ctx.GetStoreId(Store);
+            OrderObject.UserEntityId = _ctx.GetUsersId(User);
             _ctx.newOrder(OrderObject);
 
 
-            
+
             Order.Store = Store;
             Order.User = User;
-            Order.EntityId=OrderObject.EntityId;
-            
+            Order.EntityId = OrderObject.EntityId;
+
             return View("Order", Order);
         }
 
@@ -43,14 +43,14 @@ namespace PizzaBox.Client.Controllers
 
 
         [HttpPost("/ContinueOrder")]
-        public IActionResult ContinueOrder( string User, string Store, string Pizzas, long EntityId)
+        public IActionResult ContinueOrder(string User, string Store, string Pizzas, long EntityId)
         {
             var model = new OrderViewModel();
-            
+
             var order = _ctx.getOrder(EntityId);
-           
-          
-            
+
+
+
             model.Pizzas = _ctx.getOrdersPizzas(order.EntityId);
 
             model.EntityId = order.EntityId;
@@ -58,10 +58,18 @@ namespace PizzaBox.Client.Controllers
             model.User = User;
 
             model.Store = Store;
-            
+
             model.StoreId = _ctx.GetStoreId(Store);
-            
+
             return View("OrderContinue", model);
+        }
+        [HttpPost("/RemoveOrder")]
+        public IActionResult RemoveOrder(long EntityId)
+        {
+            
+            _ctx.RemoveOrder(EntityId);
+            
+            return View("CancelOrder");
         }
 
         [HttpPost("/AddPizza")]
@@ -103,7 +111,7 @@ namespace PizzaBox.Client.Controllers
         [HttpPost("/FinishOrder")]
         public IActionResult FinishOrder(string User, string Store, long EntityId)
         {
-            
+
             var order = _ctx.getOrder(EntityId);
             var model = new OrderViewModel();
             model.Pizzas = _ctx.getOrdersPizzas(EntityId);
@@ -111,29 +119,29 @@ namespace PizzaBox.Client.Controllers
             {
                 model.Total = model.Total + 10;
             }
-            
+
             model.User = User;
             model.Store = Store;
-            
-            var store = _ctx.GetStore(model.Store);
-           model.StoreTotal = store.Revenue + model.Total;
 
-           store.Revenue = model.StoreTotal;
+            var store = _ctx.GetStore(model.Store);
+            model.StoreTotal = store.Revenue + model.Total;
+
+            store.Revenue = model.StoreTotal;
 
             _ctx.Save();
 
             return View("OrderFinished", model);
         }
         [HttpPost("/RemovePizza")]
-        public IActionResult RemovePizza(string Store, string User, long EntityId,long PizzaId)
+        public IActionResult RemovePizza(string Store, string User, long EntityId, long PizzaId)
         {
             _ctx.RemovePizza(PizzaId);
 
             var model = new OrderViewModel();
 
             Order order = _ctx.getOrder(EntityId);
-            
-            model.Pizza="none";
+
+            model.Pizza = "none";
             model.Order = order;
             model.Pizzas = _ctx.getOrdersPizzas(EntityId);
             foreach (var item in model.Pizzas)
@@ -144,7 +152,7 @@ namespace PizzaBox.Client.Controllers
             model.User = User;
             model.Store = Store;
 
-            return View("RemovePizza",model);
+            return View("RemovePizza", model);
         }
     }
 }

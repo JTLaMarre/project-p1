@@ -89,3 +89,4 @@ C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razo
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Order\RemovePizza.cshtml.g.cs
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Store\StoreHistory.cshtml.g.cs
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Store\StoreSales.cshtml.g.cs
+C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Client\obj\Debug\net5.0\Razor\Views\Order\CancelOrder.cshtml.g.cs

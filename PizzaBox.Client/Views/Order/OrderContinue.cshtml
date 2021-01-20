@@ -70,7 +70,10 @@
 <div class="row">
 <div class="col-md"></div>
 <div class="col-md">
-  <a href="/Home" class="btn btn-warning"> cancel order </a>
+   <form asp-controller="Order" asp-action="RemoveOrder" method="POST">
+<input type="text" class="d-none" asp-for="EntityId" name="EntityId" value ="@Model.EntityId">
+<button type="status"class="btn btn-warning btn-lg">Cancel Order</button>
+   </form>
 </div>
 <div class="col-md"></div>
 </div>  

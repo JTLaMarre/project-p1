@@ -15,7 +15,7 @@
 
 @foreach (var item in Model.Stores)
 {
-<input type="radio"asp-for="Store" name="Store" value = "@item" id="@item">
+<input type="radio"asp-for="Store" name="Store" value = "@item" id="@item" required>
 <label >@item</label>
     }
     <input type="text" class ="d-none" asp-for="User" name ="User" value="@Model.User">
