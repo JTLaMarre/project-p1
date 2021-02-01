@@ -38,7 +38,7 @@ SO THAT I can tell the store what pizzas I would like to order
 
 ## ScreenShot
 
-![Screenshot](project-p1\Capture1.PNG)
+![Screenshot](./project-p1/Capture1.PNG)
 ## Github
 profile:JTLaMarre
 email: jacobtlamarre@gmail.com
