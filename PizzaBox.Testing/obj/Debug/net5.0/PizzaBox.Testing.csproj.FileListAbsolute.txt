@@ -98,3 +98,5 @@ C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Testing\obj\Debug\net5.0\Piz
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Testing\obj\Debug\net5.0\ref\PizzaBox.Testing.dll
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Testing\obj\Debug\net5.0\PizzaBox.Testing.pdb
 C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Testing\obj\Debug\net5.0\PizzaBox.Testing.genruntimeconfig.cache
+C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Testing\bin\Debug\net5.0\PizzaBox.Domain.dll
+C:\Users\lorda\Sandbox\revature\project-p1\PizzaBox.Testing\bin\Debug\net5.0\PizzaBox.Domain.pdb

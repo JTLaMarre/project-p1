@@ -14,6 +14,8 @@ namespace PizzaBox.Domain.Models
         public List<APizzaModel> Pizzas { get; set; }
         public long UserEntityId { get; set; }
 
+        public long StoreEntityId {get; set;}
+
 // TODO Remove then restruct db this number Id isn't used;
         public long OrderId {get; set;}
 
@@ -28,29 +30,11 @@ namespace PizzaBox.Domain.Models
         }
 
 
-        public void DisplayPizzaOptions()
-        {
-            System.Console.WriteLine("1--$10 Med Pepperoni Pizza");
-            System.Console.WriteLine("2--$10 Med Four Cheese Pizza");
-            System.Console.WriteLine("3--$10 Med Veggie Pizza");
-            System.Console.WriteLine("4--$10 Med Meat Pizza");
-            System.Console.WriteLine("5--$10 Large Meat Pizza");
-            System.Console.WriteLine("6--$10 Large Pepperoni Pizza");
-            System.Console.WriteLine("7--$10 Large Four Cheese Pizza");
-            System.Console.WriteLine("8--$10 Large Veggie Pizza");
+       
         
+        public void AddPizza(int choice)
+        {
             
-
-            System.Console.WriteLine("Choose a Pizza by number or enter 0 to finish adding pizzas to order");
-        }
-        public int SelectPizza()
-        {
-            int.TryParse(System.Console.ReadLine(), out int input);
-            return input;
-        }
-        public void AddPizza()
-        {
-            var choice = (SelectPizza());
 
             if (choice == 1)
             {
@@ -60,8 +44,6 @@ namespace PizzaBox.Domain.Models
                     APizzaModel p =_pizzaFactory.Make<PepperoniPizza>();
                     p.OrderId=EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Pepperoni Pizza Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -78,8 +60,6 @@ namespace PizzaBox.Domain.Models
                    APizzaModel p = _pizzaFactory.Make<FourCheesePizza>();
                     p.OrderId = EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Four Cheese Pizza Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -96,8 +76,6 @@ namespace PizzaBox.Domain.Models
                     APizzaModel p = _pizzaFactory.Make<VeggiePizza>();
                     p.OrderId=EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Veggie Pizza Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -113,8 +91,6 @@ namespace PizzaBox.Domain.Models
                     APizzaModel p = _pizzaFactory.Make<MeatPizza>();
                     p.OrderId = EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Meat Pizza Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -131,8 +107,6 @@ namespace PizzaBox.Domain.Models
                     p.OrderId = EntityId;
                     p.Size = "Large";
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Meat Pizza Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -148,8 +122,6 @@ namespace PizzaBox.Domain.Models
                     APizzaModel p = _pizzaFactory.Make<PepperoniPizza>();
                     p.OrderId = EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Pepperoni Pizza Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -165,8 +137,6 @@ namespace PizzaBox.Domain.Models
                     APizzaModel p = _pizzaFactory.Make<FourCheesePizza>();
                     p.OrderId = EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Four Cheese Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -182,8 +152,6 @@ namespace PizzaBox.Domain.Models
                     APizzaModel p = _pizzaFactory.Make<VeggiePizza>();
                     p.OrderId = EntityId;
                     Pizzas.Add(p);
-                    System.Console.WriteLine("Veggie Added to Order");
-                    AddPizza();
                     Total = Total + 10;
                 }
                 else
@@ -200,15 +168,7 @@ namespace PizzaBox.Domain.Models
             else
             {
                 System.Console.WriteLine("Choose a valid option");
-                AddPizza();
-            }
+                 }
         }
-
-        
-
-
-
-
-
     }
 }

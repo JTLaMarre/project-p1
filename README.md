@@ -1,72 +1,44 @@
-The goal of the project is to build a Pizza Ordering System.
+## PizzaWorld
 
-architecture (REQUIRED)
-[solution] PizzaBox.sln
-[project - MVC] PizzaBox.Client.csproj
-OrderController, UserController, StoreController
-[project - ClassLib] PizzaBox.Domain.csproj
-think about abstraction, design patterns
-implement Models
-[project - ClassLib ] PizzaBox.Storing.csproj
-implement at least 1 repository
-[project - xunit] PizzaBox.Testing.csproj
-implement unit testing
-requirements
-The project should support objects of Customer, Store, Order, Pizza.
+ ## Description
+ A Pizza Ordering system, with a user interface built  with asp.net mvc, allows userss to navigate through the ordering process, choosing a store, adding pizzas to an order, removing unwanted pizzas, placing an order. Allows Stores to view past sales and to date sales.
 
-store
-[required] there should exist at least 2 stores for a user to choose from
-[required] each store should be able to view/list any and all of their completed/placed orders
-[required] each store should be able to view/list any and all of their sales (amount of revenue weekly or monthly)
-order
-[required] each order must be able to view/list/edit its collection of pizzas
-[required] each order must be able to compute its pricing
-[required] each order must be limited to a total pricing of no more than $250
-[required] each order must be limited to a collection of pizzas of no more than 50
-pizza
-[required] each pizza must be able to have a crust
-[required] each pizza must be able to have a size
-[required] each pizza must be able to have toppings
-[required] each pizza must be able to compute its pricing
-[required] each pizza must have no less than 2 default toppings
-[required] each pizza must limit its toppings to no more 5
-customer
-[required] must be able to view/list its order history
-[required] must be able to only order from 1 location in a 24-hour period with no reset
-[required] must be able to only order once every 2-hour period
-technologies
-.NET Core - ASP.NET MVC
-.NET Core - C#
-.NET Core - EF + SQL
-.NET Core - xUnit
-timelines
-due on Jan-18 at 11p Central
-present on Jan-19 starting at 9.30a Central
-implement as many requirements as you can
-customer story
-as a customer, i should be able to do this:
+## Table of Contents
+* [intsallation](#Installation)
+* [usage](#Usage)
+* [Technology Utilized](#Technologies)
+* [contributing](#Contributing)
+* [Tests](#Tests)
+* [User Story](#UserStory)
+* [ScreenShot](#ScreenShot)
+* [Github](#Github)
 
-access the application
-see a list of locations
-select a location
-place an order
-with either custom or preset pizzas
-if custom
-select crust, size and toppings
-if preset
-select pizza and its size
-see a tally of my order
-add or remove more pizzas
-and checkout when complete with latest order
-see my order history
-make a new order
-store story
-as a store, i should be able do this:
+## Installation
+in an enviroment with the asp.net sdk run the application with dotnet watch run in the client folder to install
 
-access the application
-select options for order history, sales
-if order history
-select options for all store orders and orders associated to a user (filtering)
-if sales
-see pizza type, count, revenue by week or by month
-the goal is to try to complete as many reqs as you can in the time alloted. :)
+## Usage
+open application choose a user or add a user, place orders, or alternatively choose a store to view store sales and order history. 
+
+## Technologies
+C#,HTML/CSS, ASP.NET MVC, Bootstrap Framework
+
+## License
+used the undefined license
+
+## Contributing
+Jacob T LaMarre contributed to the design.
+
+## Tests
+try these test commands: there are some xunit tests excecutable through the dotnet test command, however a user may desire to experiment with ordering a pizza(s) and then checking their order history to see if it has been added. 
+
+## UserStory
+AS A Customer wanting to order pizza
+I WANT application that allows me to choose a store and pizzas
+SO THAT I can tell the store what pizzas I would like to order
+
+## ScreenShot
+
+![Screenshot](project-p1\Capture1.PNG)
+## Github
+profile:JTLaMarre
+email: jacobtlamarre@gmail.com

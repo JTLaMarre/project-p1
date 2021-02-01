@@ -47,12 +47,7 @@ namespace PizzaBox.Storing
                     new Store() {EntityId=9,Name="Big Italy"}
                 }
             );
-            builder.Entity<User>().HasData( new List<User>
-                {
-                    new User() {EntityId= 1, Name = "UserA"},
-                    new User() {EntityId= 2, Name = "UserB"}
-                }
-            );
+            
         }
         
     }
